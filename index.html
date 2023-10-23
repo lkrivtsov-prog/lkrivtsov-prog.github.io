@@ -14,6 +14,9 @@ index.html
 
 :: Benedictines {"position":"125,500","size":"100,100"}
 (text-colour:red)+(bg:cyan)[(text-style:"bold")[=
+
+What is your name?(input:bind $name)
+(dropdown:bind $name2, "Henry","Mary", "Elizabeth","Edward")
 The Benedictines are a religious order of monks and nuns within the Catholic Church and they follow the Rule of Saint Benedict, which is a set of guidelines for monastic life written by Saint Benedict of Nursia in the 6th century.  Over the centuries, various congregations of Benedictines have developed. Some Benedictine communities have engaged in missionary activities abroad, spreading the Christian faith]. [[Franciscans]]  
 
 
@@ -24,6 +27,7 @@ The day of a monk in a Tudor monastery typically began with the ringing of bells
 
 :: Dominicans {"position":"25,800","size":"100,100"}
 (text-colour:white)+(bg:red)[(text-style:"mark")[=
+(input-box:"XXXX=",4,"Write Your Name Here")
 The Dominicans, known as the Order of Preachers, are a prominent religious order within the Catholic Church founded by Saint Dominic de Guzman in the early 13 century. They are also known as the Black Friars due to their black robes. One notable Dominican figure during the Tudor period was John Fisher. He was made a cardinal by Pope Paul III in 1535. However, Fisher's loyalty to the Catholic Church led to his eventual execution by King Henry VIII.  ]    [[Food]] 
 
 
@@ -34,12 +38,21 @@ As a result of the Reformation, monasteries were dissolved and were subjected to
 
 :: Food {"position":"1175,750","size":"100,100"}
 (text-colour:blue)+(bg:white)[(text-style:"expand")[=
-Food in the Tudor monastery was simple. Bred was a dietary staple and the main source of sustenance. Monasteries typically baked their own bread and it was consumed daily, both as a basic food and for the Eucharist. Ale was the primary beverage in monastic life, as it was believed to be safer to drink than water due to potential contamination. Monasteries often had their own breweries, and ale was brewed regularly.  Monastic gardens provided vegetables such as cabbage, leeks, onions, peas, beans, and turnips which were used to make soups and stews.  They also ate fish, milk, butter, cheese, eggs, herbs and spices, and pottage. On special occasions or feast days, monks enjoyed roast meats and desserts.]    [[Vow of obedience to the abbot]] 
+
+What is your name? (input:bind $name)
+Food in the Tudor monastery was simple. Bred was a dietary staple and the main source of sustenance. Monasteries typically baked their own bread and it was consumed daily, both as a basic food and for the Eucharist. Ale was the primary beverage in monastic life, as it was believed to be safer to drink than water due to potential contamination. Monasteries often had their own breweries, and ale was brewed regularly.  Monastic gardens provided vegetables such as cabbage, leeks, onions, peas, beans, and turnips which were used to make soups and stews.  They also ate fish, milk, butter, cheese, eggs, herbs and spices, and pottage. On special occasions or feast days, monks enjoyed roast meats and desserts.]    
+
+[[Vow of obedience to the abbot]] 
 
 
 :: Franciscans {"position":"125,650","size":"100,100"}
-(text-colour:white)+(bg:black)[(text-style:"wavy-strike")[=
-The Franciscans is a prominent religious order within the Catholic Church founded by Saint Francis of Assisi in the early 13th century and also known as the Order of Friars Minor (O.F.M.). Monks dedicated their lives to poverty and humility. They are renowned for their commitment to caring for the poor and their members as friars, lived a simple lifestyle focused on spiritual devotion and community. The Franciscan order had numerous scholars, theologians, and missionaries. ]   [[Dominicans]] 
+(enchant:?passage,(text-colour:navy)+(bg:lime))Your Text Here[=
+Welcome to Tudor Monastery
+What is your name?(input:bind $name)
+No really, what is your name?(dropdown:bind $name2, "Henry", "William","Mary","Elizabeth")
+The Franciscans is a prominent religious order within the Catholic Church founded by Saint Francis of Assisi in the early 13th century and also known as the Order of Friars Minor (O.F.M.). Monks dedicated their lives to poverty and humility. They are renowned for their commitment to caring for the poor and their members as friars, lived a simple lifestyle focused on spiritual devotion and community. The Franciscan order had numerous scholars, theologians, and missionaries. ]  
+[[Dominicans]] (text-style:"bold")[=
+Your Text Here
 
 
 :: King Henry VIII {"position":"800,900","size":"100,100"}
@@ -51,10 +64,18 @@ The Franciscans is a prominent religious order within the Catholic Church founde
 ]
 (after:3s)[If Henry VIII had chosen to remain loyal to the Catholic Church, his six marriages and the subsequent religious reforms might not have occurred. ]
 
+What is your name? (input:bind $name)
+
+What is your Tudor name? (dropdown:bind $name2, "Henry", "Mary", "William")
+Or you could call me...
+
+ "King of Reformation"
+
 
 :: Monasteries during the Tudor period in England {"position":"900,375","size":"100,100"}
 (enchant:?passage,(bg:purple))(text-style:"bold")[=
-(text-colour:white)+(bg:navy)(enchant:?passage,(text-colour:white)+(bg:blue))During the Tudor period in England, which lasted from the late 15th century to the early 17th century, monastic life had significant changes and challenges, ultimately leading to its dissolution under King Henry VIII. Tudor monasteries were vibrant centers of religious life, serving as both spiritual sanctuaries and hubs of community support. The life of a monk in a Tudor monastery was a deeply structured and devout existence, characterized by rigorous religious devotion, asceticism, and a commitment to a life of prayer and service to God. Monks were part of various religious orders, such as Benedictines, Franciscans, and Dominicans, each with its own unique traditions and rules.
+During the Tudor period in England, which lasted from the late 15th century to the early 17th century, monastic life had significant changes and challenges, ultimately leading to its dissolution under King Henry VIII. Tudor monasteries were vibrant centers of religious life, serving as both spiritual sanctuaries and hubs of community support. The life of a monk in a Tudor monastery was a deeply structured and devout existence, characterized by rigorous religious devotion, asceticism, and a commitment to a life of prayer and service to God. Monks were part of various religious orders, such as Benedictines, Franciscans, and Dominicans, each with its own unique traditions and rules.
+
 [[Monasteries during the Tudor period in England]]
 [[Religious Life]]
 [[Daily Routine]]
@@ -76,7 +97,11 @@ The Franciscans is a prominent religious order within the Catholic Church founde
 [[Reformation]]
 <a title="95Thesen.jpg: User:Shizhao
 derivative work: 6birc, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:95Thesen_facsimile_colour.png"><img width="512" alt="95Thesen facsimile colour" src="https://upload.wikimedia.org/wikipedia/commons/5/58/95Thesen_facsimile_colour.png"></a>
-[[End of era of monasticism in England]]
+[[End of era of monasticism in England]](if:$ is "")
+
+
+:: Monks pray in the church many times per day. They were expected to attend these services in the monastery's church or chapel. These services were designed to praise and worship God, seek forgiveness for sins, and sanctify various times of the day. They had a series of prayers and psalms, which were sung or recited at specific times throughout the day and night. This included Matins (midnight), Lauds (morning), Prime, terce, Sext, None (daytime hours, Vespers (evening), and Compline (night).  These services were conducted in Latin, which was an official language of the Church, and involved singing, chanting, and recitation of Psalms.  Midday prayers known as Sext The day was punctuated by several more prayer sessions, including Vespers, Compline, and the nighttime prayers of Matin {"position":"900,1025","size":"100,100"}
+
 
 
 :: Reformation {"position":"1100,900","size":"100,100"}
@@ -92,9 +117,12 @@ The Reformation in Tudor times was a big change in England during the 16th centu
 
 
 :: Religious Life {"position":"900,775","size":"100,100"}
-(text-style:"shadow")[(text-style:"shadow")[=
-(enchant:?passage,(bg:magenta))(text-style:"italic","fade-in-out")=
-(text-style:"underline")[(enchant:?passage,(text-colour:white)+(bg:blue))Monks pray in the church many times per day. They were expected to attend these services in the monastery's church or chapel. These services were designed to praise and worship God, seek forgiveness for sins, and sanctify various times of the day. They had a series of prayers and psalms, which were sung or recited at specific times throughout the day and night. This included Matins (midnight), Lauds (morning), Prime, terce, Sext, None (daytime hours, Vespers (evening), and Compline (night).  These services were conducted in Latin, which was an official language of the Church, and involved singing, chanting, and recitation of Psalms.  Midday prayers known as Sext The day was punctuated by several more prayer sessions, including Vespers, Compline, and the nighttime prayers of Matin] [[Daily Routine]] 
+[[Monks pray in the church many times per day. They were expected to attend these services in the monastery's church or chapel. These services were designed to praise and worship God, seek forgiveness for sins, and sanctify various times of the day. They had a series of prayers and psalms, which were sung or recited at specific times throughout the day and night. This included Matins (midnight), Lauds (morning), Prime, terce, Sext, None (daytime hours, Vespers (evening), and Compline (night).  These services were conducted in Latin, which was an official language of the Church, and involved singing, chanting, and recitation of Psalms.  Midday prayers known as Sext The day was punctuated by several more prayer sessions, including Vespers, Compline, and the nighttime prayers of Matin]]
+
+
+[[Daily Routine]] 
+
+
 
 
 :: Roles {"position":"100,200","size":"100,100"}
